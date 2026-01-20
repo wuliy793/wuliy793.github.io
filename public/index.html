@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人文件管理系统 - 安全私密</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📁</text></svg>">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .loading { text-align: center; padding: 100px; color: white; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="loading">🔒 加载安全环境中...</div>
+    </div>
+
+    <script>
+        // 安全保护措施
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.keyCode === 123)) {
+                e.preventDefault(); return false;
+            }
+        };
+        window.addEventListener('devtoolschange', e => e.detail.open && location.reload());
+    </script>
+    
+    <script src="script.min.js?v=1.0.0"></script>
+</body>
+</html>
